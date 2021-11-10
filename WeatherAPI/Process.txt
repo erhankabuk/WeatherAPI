@@ -14,7 +14,7 @@ HttpClient httpClient = new HttpClient();
 -Create base http uri in Task
  httpClient.BaseAddress = new Uri("https://api.openweathermap.org/data/2.5/weather");
  -Create HttpResponse
-  HttpResponseMessage resp = await httpClient.GetAsync($"?q={city}&appid=8bc8ce01ab5c38cf18c0df5695ce8fc4&units=metric");
+  HttpResponseMessage resp = await httpClient.GetAsync($"?q={city}&appid=API=metric");
   -install a package for ReadAsAsync
   Install-Package Microsoft.AspNet.WebApi.Client 
   paste in Package Manager Console
@@ -24,7 +24,7 @@ HttpClient httpClient = new HttpClient();
 
   -Create ViewModel object and assigne values
   //https://openweathermap.org/current
-  //api.openweathermap.org/data/2.5/weather?q=ankara&appid=8bc8ce01ab5c38cf18c0df5695ce8fc4&units=metric
+  //api.openweathermap.org/data/2.5/weather?q=ankara&appid=API&units=metric
    WeatherViewModel vm = new WeatherViewModel() { 
             City=data.name,
             Temperature=data.main.temp,
