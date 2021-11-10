@@ -1,0 +1,13 @@
+﻿@model WeatherViewModel
+
+
+@if (Model == null)
+{
+    <text>City is not available</text>
+}
+else
+{
+    <text>Current weather is @Model.Description and @Model.Temperature °C in @Model.City</text>
+}
+
+
