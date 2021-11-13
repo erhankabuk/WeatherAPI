@@ -23,20 +23,15 @@ namespace WeatherAPI.ViewComponents
             HttpResponseMessage resp = await httpClient.GetAsync($"?q={city}&appid=API&units=metric");
             //Read Message
             dynamic data = await resp.Content.ReadAsAsync<ExpandoObject>();
-
-
             WeatherViewModel vm = new WeatherViewModel() { 
             City=data.name,
             Temperature=data.main.temp,
             Description=data.weather[0].description
-            };           
-
+            };
             return View(vm);
-
             }
             catch (Exception)
             {
-
                 return View(null);
             }
 
