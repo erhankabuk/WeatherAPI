@@ -20,7 +20,8 @@ namespace WeatherAPI.ViewComponents
             //Create base http uri
             httpClient.BaseAddress = new Uri("https://api.openweathermap.org/data/2.5/weather");
             // Create Http Response
-            HttpResponseMessage resp = await httpClient.GetAsync($"?q={city}&appid=API&units=metric");
+            //Get Your Own Api Key in {APIKEY}
+            HttpResponseMessage resp = await httpClient.GetAsync($"?q={city}&appid={APIKEY}&units=metric");
             //Read Message
             dynamic data = await resp.Content.ReadAsAsync<ExpandoObject>();
             WeatherViewModel vm = new WeatherViewModel() { 

@@ -1,20 +1,24 @@
 ﻿
 -Get your own Api Key from https://openweathermap.org/current
-
+----
 -Create entity class in "Models" folder
 -Create an folder as "ViewComponents" in project
 -Create a ....ViewComponent file in "ViewComponents" which is inherited from "ViewComponent"
 -Code in ....ViewComponent Task
-
--Create Components folder in Shared folder
--Create a .... folder in Components.
--Create defaılt.cshtml file in .... and bind @model
-
+----
+-Create default.cshtml file in .... and bind @model
+----
 -Arrange _Layout.cshtml and add @RenderBody() in body section
-
+----
 - Add Tag helper in _ViewImport.cshtml  as   @addTagHelper *, WeatherAPI
+----
+-Create Components folder in Shared folder
+-Create a .... folder in Components. 
 
 -Create http client in ....VievComponent.cs
+
+-Code async Task<IviewComponent> InvodeAsync()
+
 HttpClient httpClient = new HttpClient();
 -Create base http uri in Task
  httpClient.BaseAddress = new Uri("https://api.openweathermap.org/data/2.5/weather");
@@ -36,4 +40,4 @@ HttpClient httpClient = new HttpClient();
             };           
 
             return View(vm);
-
+----
